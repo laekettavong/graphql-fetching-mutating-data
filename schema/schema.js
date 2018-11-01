@@ -64,9 +64,79 @@ const RootQuery = new GraphQLObjectType({
     }
 });
 
-
-
+const mutation = new GraphQLObjectType({
+    name: 'Mutation',
+    fields: {
+        addUser: {
+            type: UserType,
+            args: {
+                firstName: { type: new GraphQLNonNull(GraphQLString) },
+                age: { type: new GraphQLNonNull(GraphQLInt) },
+                company: { type: GraphQLString, defaultValue: 1 },
+                isManager: { type: GraphQLBoolean, defaultValue: false }
+            },
+            resolve(parentValue, { firstName, age, company, isManager }) { //destructed from 'args' argument
+                return axios.post(`http://localhost:3000/users`, { firstName, age, company, isManager })
+                    .then(resp => resp.data);
+            }
+        },
+        addCompany: {
+            type: CompanyType,
+            args: {
+                name: { type: new GraphQLNonNull(GraphQLString) },
+                description: { type: new GraphQLNonNull(GraphQLString) },
+            },
+            resolve(parentValue, { name, description }) { //destructed from 'args' argument
+                return axios.post(`http://localhost:3000/companies`, { name, description })
+                    .then(resp => resp.data);
+            }
+        },
+        deleteUser: {
+            type: UserType,
+            args: { id: { type: new GraphQLNonNull(GraphQLString) } },
+            resolve(parentValue, { id }) { //destructed from 'args' argument
+                return axios.delete(`http://localhost:3000/users/${id}`)
+                    .then(resp => resp.data);
+            }
+        },
+        deleteCompany: {
+            type: CompanyType,
+            args: { id: { type: new GraphQLNonNull(GraphQLString) } },
+            resolve(parentValue, { id }) { //destructed from 'args' argument
+                return axios.delete(`http://localhost:3000/companies/${id}`)
+                    .then(resp => resp.data);
+            }
+        },
+        updateUser: {
+            type: UserType,
+            args: {
+                id: { type: new GraphQLNonNull(GraphQLString) },
+                firstName: { type: GraphQLString },
+                age: { type: GraphQLInt },
+                company: { type: GraphQLString, defaultValue: 1 },
+                isManager: { type: GraphQLBoolean, defaultValue: false }
+            },
+            resolve(parentValue, { id, firstName, age, company, isManager }) { //destructed from 'args' argument
+                return axios.put(`http://localhost:3000/users/${id}`, { firstName, age, company, isManager })
+                    .then(resp => resp.data);
+            }
+        },
+        updateCompany: {
+            type: UserType,
+            args: {
+                id: { type: new GraphQLNonNull(GraphQLString) },
+                name: { type: GraphQLString },
+                description: { type: GraphQLString},
+            },
+            resolve(parentValue, { id, name, description}) { //destructed from 'args' argument
+                return axios.put(`http://localhost:3000/companies/${id}`, { name, description })
+                    .then(resp => resp.data);
+            }
+        },
+    }
+})
 
 module.exports = new GraphQLSchema({
-    query: RootQuery
-});
+    query: RootQuery,
+    mutation
+})

@@ -1,56 +1,97 @@
 {
-    "users": [
-        {
-            "id": "40",
-            "firstName": "Alex",
-            "age": 40,
-            "companyId": "2",
-            "isManager": false
-        },
-        {
-            "id": "41",
-            "firstName": "Nick",
-            "age": 40,
-            "companyId": "2",
-            "isManager": true
-        },
-        {
-            "firstName": "Samantha",
-            "age": 25,
-            "companyId": "1",
-            "id": "S1TKHzuwl",
-            "isManager": false
-        },
-        {
-            "firstName": "Bob",
-            "age": 34,
-            "companyId": "1",
-            "id": "sadfasf124",
-            "isManager": false
-        },
-        {
-            "firstName": "Steve",
-            "age": 30,
-            "companyId": "3",
-            "id": "20",
-            "isManager": false
-        }
-    ],
-    "companies": [
-        {
-            "id": "1",
-            "name": "Apple",
-            "description": "Maker of iPhone"
-        },
-        {
-            "id": "2",
-            "name": "Google",
-            "description": "Search giant"
-        },
-        {
-            "id": "3",
-            "name": "Amazon",
-            "description": "One stop eCommerce shop"
-        }
-    ]
+  "users": [
+    {
+      "id": "40",
+      "firstName": "Alex",
+      "age": 40,
+      "companyId": "2",
+      "isManager": false
+    },
+    {
+      "id": "41",
+      "firstName": "Nick",
+      "age": 40,
+      "companyId": "2",
+      "isManager": true
+    },
+    {
+      "firstName": "Samantha",
+      "age": 25,
+      "companyId": "1",
+      "id": "S1TKHzuwl",
+      "isManager": false
+    },
+    {
+      "firstName": "Bob",
+      "age": 34,
+      "companyId": "1",
+      "id": "sadfasf124",
+      "isManager": false
+    },
+    {
+      "firstName": "Steve",
+      "age": 30,
+      "companyId": "3",
+      "id": "20",
+      "isManager": false
+    },
+    {
+      "firstName": "Adam",
+      "age": 30,
+      "company": "2",
+      "isManager": true,
+      "id": "H2cp6Ph"
+    },
+    {
+      "firstName": "Frankie",
+      "age": 30,
+      "id": "4qpydTU"
+    },
+    {
+      "firstName": "Johnie",
+      "age": 30,
+      "id": "O~a6~tW"
+    },
+    {
+      "firstName": "Ronnie",
+      "age": 43,
+      "isManager": true,
+      "id": "5EixwPr"
+    },
+    {
+      "firstName": "Andy",
+      "age": 45,
+      "isManager": false,
+      "id": "1TY6bEG"
+    },
+    {
+      "firstName": "Henry",
+      "age": 27,
+      "company": "3",
+      "isManager": true,
+      "id": "GwC7zRQ"
+    }
+  ],
+  "companies": [
+    {
+      "id": "1",
+      "name": "Apple",
+      "description": "Maker of iPhone"
+    },
+    {
+      "id": "2",
+      "name": "Google",
+      "description": "Search giant"
+    },
+    {
+      "id": "3",
+      "name": "Amazon",
+      "description": "One stop eCommerce shop"
+    },
+    {
+      "name": "Walmart",
+      "description": "Always the lowest prices",
+      "id": "aY2_auF"
+    }
+  ]
 }
